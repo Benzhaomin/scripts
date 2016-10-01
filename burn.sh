@@ -4,12 +4,11 @@
 BURN=$1
 
 echo "Going for a $BURN seconds burn"
-psensor 2>/dev/null &
-sensors | grep 'Core 0'
+sensors | grep 'Core'
 burnP6 &
 burnP6 &
 burnP6 &
 burnP6 &
 sleep $BURN
-sensors | grep 'Core 0'
+sensors | grep 'Core'
 killall burnP6
