@@ -1,6 +1,6 @@
 # what
 
-Get songs from Youtube and play them on mpd as a http radio stream
+Get songs from Youtube and play them on mpd as a radio stream
 
 # requirements
 
@@ -40,6 +40,9 @@ alias mpdall='mpc clear && mpc listall | mpc add'
 ```shell
 youmpd "https://www.youtube.com/watch?v=foobarsong"
 mpdall
+mpc play
+mpc random on
+mpc repeat on
 ```
 
 # listening
