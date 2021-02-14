@@ -9,8 +9,6 @@ pip install pyopencl
 
 # example provided by Roger Pau Monn'e
 
-from __future__ import print_function
-from __future__ import absolute_import
 import pyopencl as cl
 import numpy
 import numpy.linalg as la
@@ -104,7 +102,7 @@ for platform in cl.get_platforms():
         print("Execution time of test: %g s" % elapsed)
 
         c = numpy.empty_like(a)
-        cl.enqueue_read_buffer(queue, dest_buf, c).wait()
+        cl.enqueue_copy(queue, c, dest_buf).wait()
         equal = numpy.all( c == c_result)
 
         if not equal:
